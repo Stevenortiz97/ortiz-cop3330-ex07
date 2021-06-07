@@ -21,7 +21,7 @@ public class App {
 
     static Scanner in = new Scanner(System.in);
 
-    private static int lengthint(){
+    private static double lengthint(){
 
         System.out.print("What is the length of the room in feet? ");
         String length = in.nextLine();
@@ -29,7 +29,7 @@ public class App {
 
     }
 
-    private static int widthint(){
+    private static double widthint(){
 
         System.out.print("What is the width of the room in feet? ");
         String width = in.nextLine();
@@ -41,21 +41,18 @@ public class App {
 
         double factor = (double) 0.09290304;
 
-        int lengthint = lengthint();
-        int widthint = widthint();
+        double lengthint = lengthint();
+        double widthint = widthint();
 
         System.out.println("You entered the dimensions of " + lengthint + " feet by " + widthint + " feet.");
 
-        int areaImperial = lengthint * widthint;
+        double areaImperial = lengthint * widthint;
         double areaMetric = areaImperial * factor;
 
         System.out.println("The area is");
-        System.out.println(+areaImperial+" square feet");
 
-        DecimalFormat format = new DecimalFormat("0.000");
-        System.out.print(format.format(areaMetric));
-        System.out.print(" square meters");
+        System.out.println(""+String.format("%.3f", areaImperial )+" square feet");
 
+        System.out.print(""+String.format("%.3f",areaMetric)+ " square meters");
     }
-
 }
